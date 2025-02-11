@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+
+echo "\n\n"
+echo "----------------------------------------"
+echo "PRE-COMMIT HOOK RUNNING"
+echo "----------------------------------------"
+echo "RUNNING PRETTIER + ESLINT"
+
+npx lint-staged --allow-empty
+
+echo "\n\n"
+echo "----------------------------------------"
+echo "RUNNING TESTS"
+echo "----------------------------------------"
+
+# Removing test as there is no test configured yet
+#npm run test
